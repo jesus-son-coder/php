@@ -1,6 +1,25 @@
 <?php
 
+$password = 'monpassword';
+
+/* Comme paramètre de la fonction, on a :
+    - le mot de passe
+    - l'algorithme souhaité : ici 'PASSWORD_DEFAULT'
+*/
+$hash = password_hash($password, PASSWORD_DEFAULT);
+
+var_dump($hash);
+
+// Vérifier que le mot de passe est correct :
+if(password_verify($password, $hash)) {
+    echo "OK";
+} else {
+    echo "NOK";
+}
+
 ?>
+
+
 <!doctype html>
 <html lang="fr">
 <head>
